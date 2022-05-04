@@ -1,35 +1,37 @@
-<script context="module">
-  export async function load({fetch}) {
-    try {
-      const res = await fetch('/blog/all.json')
-      const data = await res.json()
-      return {
-        props: data
-      }
-    } catch (err) {
-      console.log('500:', err)
-    }
-  }
-</script>
-
 <script>
-  import AuthorCard from '$lib/AuthorCard.svelte'
-  import PostsGrid from '$lib/PostsGrid.svelte'
-
-  export let posts
-  export let authors
+  import Heading from './../components/Heading.svelte'
 </script>
 
 <svelte:head>
-  <title>Blog</title>
+  <title>Wilkommen | Narrenverein Heulicher | Heudorf im Hegau</title>
 </svelte:head>
 
-<h1>Recent posts</h1>
+<p>Brauchtum in seiner schönsten Form erleben</p>
 
-<PostsGrid {posts} />
+<section>
+  <h2>
+    <Heading style={'h2'} firstLine={'Heu !'} secondLine={'Liecher !'} />
+  </h2>
+</section>
 
-<h2 style="margin-top: 4rem">Author{authors.length > 1 ? 's' : ''}</h2>
+<section>
+  <h3>
+    <Heading style={'h3'} firstLine={'unser'} secondLine={'Verein'} />
+  </h3>
 
-{#each authors as author}
-  <AuthorCard {author} />
-{/each}
+  <!-- <ImageCompVereinsfiguren /> -->
+
+  <!-- <BtnCta link="/figuren">Mehr erfahren</BtnCta> -->
+</section>
+
+<section>
+  <h3>
+    <Heading style={'h3'} firstLine={'Mit'} secondLine={'Machen'} />
+  </h3>
+
+  <p>
+    Du hast lust mit uns um die Häuser zu ziehen oder wolltest schon immer mal wissen wie es unter
+    einer Maske aussieht?
+  </p>
+</section>
+<!-- <BtnCta link="/kontakt">schreib uns</BtnCta> -->
