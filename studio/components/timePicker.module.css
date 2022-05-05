@@ -1,0 +1,88 @@
+@import "part:@sanity/base/theme/shadows-style";
+@import "part:@sanity/base/theme/variables-style";
+
+.root {
+  composes: root from "part:@sanity/base/theme/forms/text-input-style";
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  opacity: 1 !important;
+  padding: 0;
+  justify-content: space-between;
+  position: relative;
+
+  @nest & > div {
+    flex-grow: 1;
+  }
+
+  /* from text-input in base */
+  @nest &:hover {
+    box-shadow: var(--input-box-shadow--hover);
+    border-color: var(--input-border-color-hover);
+  }
+
+  @nest &:focus, &:focus-within {
+    box-shadow: var(--input-box-shadow--focus);
+  }
+
+  @nest &:active {
+    border-color: var(--input-border-color-active);
+  }
+
+  @nest & :global(.react-datepicker-wrapper) {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  @nest & :global(.react-datepicker__input-container) {
+    width: 100%;
+    display: block;
+  }
+
+  @nest & :global(.react-datepicker-time__caption) {
+    display: none;
+  }
+
+  @nest & :global(.react-datepicker__input-time-container) {
+    margin: 0;
+  }
+  @nest &
+      :global(.react-datepicker__input-time-container
+        .react-datepicker-time__input-container
+        .react-datepicker-time__input
+        input) {
+    width: 65px;
+    text-align: center;
+  }
+  @nest &
+      :global(.react-datepicker__input-time-container
+        .react-datepicker-time__input-container
+        .react-datepicker-time__input) {
+    margin-left: 0;
+  }
+}
+
+.inputWrapper {
+  width: 100%;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  color: inherit;
+  padding: 0.7em;
+  z-index: 2;
+}
+
+.extensionBar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.BtnWrapper {
+  padding-top: 0.5rem;
+}

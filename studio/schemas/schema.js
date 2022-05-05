@@ -5,12 +5,21 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // document schemas
-import author from './documents/author'
-import category from './documents/category'
-import post from './documents/post'
+import addresse from './documents/addresse'
+import bild from './documents/bild'
+import blockContent from './documents/blockContent'
+import chronik from './documents/chronik'
+import datenschutz from './documents/datenschutz'
+import einstellungen from './documents/einstellungen'
+import figure from './documents/figure'
+import figuren from './documents/figuren'
+import galerie from './documents/galerie'
+import impressum from './documents/impressum'
+import person from './documents/person'
+import slideshow from './documents/slideshow'
+import termin from './documents/termin'
 
 // Object types
-import authorReference from './objects/authorReference'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,12 +30,21 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
-    post,
-    category,
-    author,
+    bild,
+    galerie,
+    figuren,
+    person,
+    chronik,
+    addresse,
+    datenschutz,
+    impressum,
+    einstellungen,
+    blockContent,
+    figure,
+    slideshow,
+    termin
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    authorReference
   ])
 })
