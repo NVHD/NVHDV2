@@ -4,16 +4,13 @@
 
 <script>
   export let blogTitle = 'My Blog'
-
-  let path
-  $: ({path} = $page)
 </script>
 
 <header>
   <span>{blogTitle}</span>
   <nav>
     <ul>
-      <li><a data-selected={path === '/'} href="/">home</a></li>
+      <li><a data-selected={$page.url.pathname === '/'} href="/">home</a></li>
     </ul>
   </nav>
 </header>
