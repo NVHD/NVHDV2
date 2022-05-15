@@ -3,8 +3,6 @@
   import ImageComp from '../components/ImageComp/imageComp.svelte'
 
   export let figuren
-
-  console.log(figuren)
 </script>
 
 <svelte:head>
@@ -24,7 +22,7 @@
     <Heading style={'h3'} firstLine={'unser'} secondLine={'Verein'} />
   </h3>
 
-  <ImageComp />
+  <ImageComp data={figuren} />
 
   <!-- <BtnCta link="/figuren">Mehr erfahren</BtnCta> -->
 </section>

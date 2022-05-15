@@ -5,8 +5,6 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // document schemas
-import addresse from './documents/addresse'
-import bild from './documents/bild'
 import blockContent from './documents/blockContent'
 import chronik from './documents/chronik'
 import datenschutz from './documents/datenschutz'
@@ -16,10 +14,13 @@ import figuren from './documents/figuren'
 import galerie from './documents/galerie'
 import impressum from './documents/impressum'
 import person from './documents/person'
-import slideshow from './documents/slideshow'
 import termin from './documents/termin'
+import imageComp from './documents/imageComp'
 
 // Object types
+import addresse from './objects/addresse'
+import bild from './objects/bild'
+import slideshow from './objects/slideshow'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -42,7 +43,8 @@ export default createSchema({
     blockContent,
     figure,
     slideshow,
-    termin
+    termin,
+    imageComp
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

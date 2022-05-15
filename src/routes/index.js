@@ -1,7 +1,9 @@
 import {client} from '$lib/sanityClient'
 
 export async function get() {
-  const data = await client.fetch(`*[_type == "figur" && einsatz[0] == "verein"]`)
+  const data = await client.fetch(
+    `*[_type == "figur" && einsatz[0] == "verein"]{bild, description, name}`
+  )
 
   if (data) {
     return {
