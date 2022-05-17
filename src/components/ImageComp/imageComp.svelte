@@ -3,11 +3,11 @@
 
   export let data
 
-  console.log(data)
+  console.log(data[0].figuren)
 </script>
 
 <div class="imageComp">
-  {#each data as figur}
+  {#each data[0].figuren as figur}
     <figure>
       <SanityImage image={figur.bild} />
       <figcaption>{figur.name}</figcaption>
