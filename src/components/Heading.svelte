@@ -43,4 +43,8 @@
   .uppercase {
     text-transform: uppercase;
   }
+
+  .secondary {
+    color: var(--secondary);
+  }
 </style>

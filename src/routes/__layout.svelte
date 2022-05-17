@@ -34,6 +34,7 @@
     --white-70: hsl(0, 0%, 70%);
     --white-80: hsl(0, 0%, 80%);
     --white-90: hsl(0, 0%, 90%);
+    --white-95: hsl(0, 0%, 95%);
     --white: hsl(0, 0%, 100%);
     --base-font: 'Noto Sans', sans-serif;
     --bodyFontSize: 18px;
@@ -59,6 +60,14 @@
     --ctaHighlight: #c61d1c;
     --heading-font: var(--base-font);
     --body-font: var(--base-font);
+  }
+
+  :global(p) {
+    color: var(--black-20);
+  }
+
+  :global(figcaption) {
+    color: var(--black-40);
   }
 
   :global(a) {
