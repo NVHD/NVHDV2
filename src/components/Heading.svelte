@@ -39,4 +39,8 @@
     color: var(--primary);
     margin-bottom: 5rem;
   }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
 </style>

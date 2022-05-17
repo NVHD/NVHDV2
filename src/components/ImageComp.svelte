@@ -2,8 +2,6 @@
   import SanityImage from '$lib/SanityImage.svelte'
 
   export let data
-
-  console.log(data[0].figuren)
 </script>
 
 <div class="imageComp">

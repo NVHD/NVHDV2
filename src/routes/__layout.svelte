@@ -5,13 +5,19 @@
 
 <Header blogTitle={'SvelteKit x Sanity Blog'} />
 
-<main style="padding: 1em">
+<main>
   <slot />
 </main>
 
 <Footer />
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+  :global(body) {
+    font-family: var(--body-font);
+  }
+
   :global(body) {
     --green: hsl(177, 96%, 17%);
     --yellow: hsl(45, 87%, 55%);
@@ -51,6 +57,8 @@
     --tertiary: #a5534b;
     --cta: #a81918;
     --ctaHighlight: #c61d1c;
+    --heading-font: var(--base-font);
+    --body-font: var(--base-font);
   }
 
   :global(a) {
@@ -59,5 +67,9 @@
   :global(a:hover) {
     color: #1e61cd;
     border-bottom: none;
+  }
+
+  :global(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--heading-font);
   }
 </style>

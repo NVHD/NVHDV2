@@ -1,6 +1,6 @@
 <script>
   import Heading from '../components/Heading.svelte'
-  import ImageComp from '../components/ImageComp/imageComp.svelte'
+  import ImageComp from '../components/ImageComp.svelte'
 
   export let figuren
 </script>
@@ -13,7 +13,7 @@
 
 <section>
   <h2>
-    <Heading style={'h2'} firstLine={'Heu !'} secondLine={'Liecher !'} />
+    <Heading style={'h2 uppercase'} firstLine={'Heu !'} secondLine={'Liecher !'} />
   </h2>
 </section>
 
