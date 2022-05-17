@@ -49,6 +49,3 @@
 
   <BtnCta link="/kontakt">schreib uns</BtnCta>
 </Section>
-
-<style>
-</style>

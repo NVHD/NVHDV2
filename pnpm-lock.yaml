@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@portabletext/svelte': ^0.2.0
+  '@portabletext/svelte': 1.0.0-next.1
   '@sanity/client': ^3.3.0
   '@sanity/image-url': ^1.0.1
   '@sveltejs/adapter-netlify': ^1.0.0-next.56
@@ -18,7 +18,7 @@ dependencies:
   '@sanity/image-url': 1.0.1
 
 devDependencies:
-  '@portabletext/svelte': 0.2.0_svelte@3.48.0
+  '@portabletext/svelte': 1.0.0-next.1_svelte@3.48.0
   '@sveltejs/adapter-netlify': 1.0.0-next.56
   '@sveltejs/kit': 1.0.0-next.327_svelte@3.48.0
   eslint: 8.15.0
@@ -66,12 +66,24 @@ packages:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
     dev: true
 
-  /@portabletext/svelte/0.2.0_svelte@3.48.0:
-    resolution: {integrity: sha512-9CWGM0ud3eyjF01ox8MZVAkv0YUKBtKKok8EpAZpFpFo4RnhCBqfD8GhcsZ6AyYCRcVKreAeba8kU5pk0mo0/Q==}
+  /@portabletext/svelte/1.0.0-next.1_svelte@3.48.0:
+    resolution: {integrity: sha512-6NCkjGJiEGVDDh0EBGIiur23ZrQJhjeYmuneZl4NgzeDDUZoqieWf4tT2mly4nyWoUCyS+k63e5477owI5VdVA==}
     peerDependencies:
-      svelte: ^3.40.0
+      svelte: ^3.47.0
     dependencies:
+      '@portabletext/toolkit': 1.0.5
       svelte: 3.48.0
+    dev: true
+
+  /@portabletext/toolkit/1.0.5:
+    resolution: {integrity: sha512-kwVOfVoquufDQNmzzhGxji9A+/T+dhLKKOHEHldM1kMUoNzY6wwrt5H/Plnw4xbdE780kkwqJqHxjxoSYr706A==}
+    dependencies:
+      '@portabletext/types': 1.0.3
+    dev: true
+
+  /@portabletext/types/1.0.3:
+    resolution: {integrity: sha512-SDDsdury2SaTI2D5Ea6o+Y39SSZMYHRMWJHxkxYl3yzFP0n/0EknOhoXcoaV+bxGr2dTTqZi2TOEj+uWYuavSw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
 
   /@rollup/pluginutils/4.2.1:

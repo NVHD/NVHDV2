@@ -16,6 +16,9 @@
 
   :global(body) {
     font-family: var(--body-font);
+    margin: 0;
+    padding: 0;
+    max-width: unset;
   }
 
   :global(body) {
@@ -58,6 +61,8 @@
     --tertiary: #a5534b;
     --cta: #a81918;
     --ctaHighlight: #c61d1c;
+    --lightBase: var(--white-90)
+    --darkBase: var(--black-20)
     --heading-font: var(--base-font);
     --body-font: var(--base-font);
   }

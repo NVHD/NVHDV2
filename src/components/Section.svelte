@@ -27,6 +27,10 @@
     background-color: var(--secondary);
   }
 
+  .tertiary {
+    background-color: var(--tertiary);
+  }
+
   .white {
     background-color: var(--white-95);
   }
