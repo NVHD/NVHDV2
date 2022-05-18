@@ -1,4 +1,5 @@
 <script>
+  import BtnEmail from './../components/BtnEmail.svelte'
   import Heading from '../components/Heading.svelte'
   import Section from '../components/Section.svelte'
 
@@ -34,13 +35,13 @@
     <p>{personenRollen.president.adresse.strassehausnummer}</p>
     <p>{personenRollen.president.adresse.postleizahl} {personenRollen.president.adresse.ort}</p>
     <p>{personenRollen.president.telefon}</p>
-    <p>{personenRollen.president.email}</p>
+    <BtnEmail email={personenRollen.president.email} />
   </div>
 
   <div>
     <h3>Kassier</h3>
     <p>{personenRollen.kassierer.name}</p>
-    <p>{personenRollen.kassierer.email}</p>
+    <BtnEmail email={personenRollen.kassierer.email} />
   </div>
 </Section>
 

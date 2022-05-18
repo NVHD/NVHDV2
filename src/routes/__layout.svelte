@@ -26,11 +26,15 @@
   }
 
   :global(body) {
-    --green: hsl(177, 96%, 17%);
+    --baseGreen: 177, 95%, 17%;
+    --green: hsl(var(--baseGreen));
+    --green-a70: hsla(var(--baseGreen), 0.7);
+    --green-a75: hsla(var(--baseGreen), 0.75);
+    --green-a80: hsla(var(--baseGreen), 0.8);
     --yellow: hsl(45, 87%, 55%);
     --paleRed: hsl(5, 38%, 47%);
     --red: hsl(0, 75%, 38%);
-    --cta-10: hsl(0, 75%, 48%);
+    --red-10: hsl(0, 75%, 48%);
     --black: hsl(0, 0%, 10%);
     --black-10: hsl(0, 0%, 10%);
     --black-20: hsl(0, 0%, 20%);
@@ -60,13 +64,14 @@
   }
 
   :global(body) {
-    --primary: #025753;
-    --secondary: #f0be2a;
-    --tertiary: #a5534b;
-    --cta: #a81918;
-    --ctaHighlight: #c61d1c;
-    --lightBase: var(--white-90)
-    --darkBase: var(--black-20)
+    --primary: var(--green);
+    --primary-transparent: var(--green-a75);
+    --secondary: var(--yellow);
+    --tertiary: var(--paleRed);
+    --cta: var(--red);
+    --ctaHighlight: var(--red-10);
+    --lightBase: var(--white-90);
+    --darkBase: var(--black-20);
     --heading-font: var(--base-font);
     --body-font: var(--base-font);
   }
