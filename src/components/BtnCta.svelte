@@ -2,15 +2,17 @@
   export let link
 </script>
 
-<button><slot /></button>
+<a href={link}><button><slot /> </button></a>
 
 <style>
+  a {
+    margin: 4rem auto 0;
+  }
   button {
     display: inline-block;
     max-width: 35rem;
     border: none;
     padding: 1.25rem 4.5rem;
-    margin: 4rem auto 0;
     background: var(--cta);
     cursor: pointer;
     text-align: center;
