@@ -22,6 +22,7 @@
 
 <style>
   h3 {
+    margin: 0;
     font-size: 4rem;
     font-weight: 700;
     text-transform: uppercase;
