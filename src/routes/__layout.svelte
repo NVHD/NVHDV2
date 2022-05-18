@@ -73,6 +73,7 @@
 
   :global(p) {
     color: var(--black-20);
+    margin: 0;
   }
 
   :global(figcaption) {
@@ -93,5 +94,9 @@
 
   :global(h1, h2, h3, h4, h5, h6) {
     font-family: var(--heading-font);
+  }
+
+  :global(h3) {
+    color: var(--primary);
   }
 </style>
