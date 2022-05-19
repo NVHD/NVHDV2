@@ -6,6 +6,8 @@
 
   export let personen
 
+  console.log(personen)
+
   // Add each person to its role
   // ( There is only one role per Person so I can hardcode the 0 )
   const personenRollen = personen.reduce((previousValue, currentValue) => {
