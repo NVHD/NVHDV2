@@ -16,10 +16,18 @@ export default {
       options: {
         layout: 'radio',
         list: [
-          {title: 'Präsident/in', value: 'president'},
-          {title: 'Vizepräsident/in', value: 'vizepresident'},
-          {title: 'Kassierer/in', value: 'kassierer'},
-          {title: 'Schriftführer/in', value: 'schriftführer'},
+          {title: 'Präsident', value: 'präsident'},
+          {title: 'Präsidentin', value: 'präsidentin'},
+          {title: 'Präsident*in', value: 'präsident*in'},
+          {title: 'Vizepräsident', value: 'vizepräsident'},
+          {title: 'Vizepräsidentin', value: 'vizepräsidentin'},
+          {title: 'Vizepräsident*in', value: 'vizepräsident*in'},
+          {title: 'Kassierer', value: 'kassierer'},
+          {title: 'Kassiererin', value: 'kassiererin'},
+          {title: 'Kassierer*in', value: 'kassierer*in'},
+          {title: 'Schriftführer', value: 'schriftführer'},
+          {title: 'Schriftführerin', value: 'schriftführerin'},
+          {title: 'Schriftführer*in', value: 'schriftführer*in'},
           {title: 'Elferrat', value: 'elferrat'}
         ]
       }

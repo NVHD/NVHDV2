@@ -27,32 +27,14 @@
     <Heading style={'h3'} firstLine={'der'} secondLine={'Vorstand'} />
   </h2>
 
-  <div>
-    <h3>Präsident*in</h3>
-    <p>{personenRollen.president}</p>
-  </div>
-
-  <div>
-    <h3>Vizepräsident*in</h3>
-    <p>{personenRollen.vizepresident}</p>
-  </div>
-
-  <div>
-    <h3>Kassierer*in</h3>
-    <p>{personenRollen.kassierer}</p>
-  </div>
-
-  <div>
-    <h3>Schriftführer*in</h3>
-    <p>{personenRollen.schriftführer}</p>
-  </div>
-
-  <div>
-    <h3>Elferräte</h3>
-    {#each personenRollen.elferrat as elferrat}
-      <p>{elferrat}</p>
-    {/each}
-  </div>
+  {#each Object.keys(personenRollen) as rolle}
+    <div>
+      <h3>{rolle[0].toUpperCase()}{rolle.slice(1)}</h3>
+      {#each personenRollen[rolle] as person}
+        <p>{person}</p>
+      {/each}
+    </div>
+  {/each}
 </Section>
 
 <style>
