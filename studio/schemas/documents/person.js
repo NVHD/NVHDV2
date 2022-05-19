@@ -4,30 +4,33 @@ export default {
   type: 'document',
   fields: [
     {
+      title: 'Anrede',
+      name: 'anrede',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Herr', value: 'male'},
+          {title: 'Frau', value: 'female'},
+          {title: 'Divers', value: 'divers'}
+        ]
+      }
+    },
+    {
       name: 'name',
       title: 'Name',
       type: 'string'
     },
     {
-      title: 'Titel / Funktion',
-      name: 'rollen',
-      type: 'array',
-      of: [{type: 'string'}],
+      title: 'Funktion',
+      name: 'rolle',
+      type: 'string',
       options: {
         layout: 'radio',
         list: [
-          {title: 'Präsident', value: 'präsident'},
-          {title: 'Präsidentin', value: 'präsidentin'},
-          {title: 'Präsident*in', value: 'präsident*in'},
-          {title: 'Vizepräsident', value: 'vizepräsident'},
-          {title: 'Vizepräsidentin', value: 'vizepräsidentin'},
-          {title: 'Vizepräsident*in', value: 'vizepräsident*in'},
-          {title: 'Kassierer', value: 'kassierer'},
-          {title: 'Kassiererin', value: 'kassiererin'},
-          {title: 'Kassierer*in', value: 'kassierer*in'},
-          {title: 'Schriftführer', value: 'schriftführer'},
-          {title: 'Schriftführerin', value: 'schriftführerin'},
-          {title: 'Schriftführer*in', value: 'schriftführer*in'},
+          {title: 'Präsident*in', value: 'präsident'},
+          {title: 'Vizepräsident*in', value: 'vizepräsident'},
+          {title: 'Kassier', value: 'kassierer'},
+          {title: 'Schriftführer*in', value: 'schriftführer'},
           {title: 'Elferrat', value: 'elferrat'}
         ]
       }
@@ -66,7 +69,7 @@ export default {
       const {title, subtitle, bild} = selection
       return {
         title,
-        subtitle: `${subtitle ? subtitle.join() : 'unbekannt'}`,
+        subtitle,
         bild
       }
     }

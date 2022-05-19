@@ -4,10 +4,10 @@ export async function get() {
   const data = await client.fetch(
     `*[
       _type == "person" 
-      && rollen[0] == "president" 
-      || rollen[0] == "schriftführer" 
-      || rollen[0] == "kassierer"]
-      {name, rollen[], adresse, email, telefon}`
+      && rolle == "präsident" 
+      || rolle == "schriftführer" 
+      || rolle == "kassierer"]
+      {anrede, name, rolle, adresse, email, telefon}`
   )
 
   if (data) {
