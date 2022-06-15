@@ -1,13 +1,22 @@
+<script context="module">
+  export const load = async ({url}) => ({props: {url}})
+</script>
+
 <script>
+  import PageTransition from '../components/PageTransition.svelte'
   import Header from '$lib/Header.svelte'
   import Footer from '$lib/Footer.svelte'
+
+  export let url
 </script>
 
 <Header blogTitle={'SvelteKit x Sanity Blog'} />
 
-<main>
-  <slot />
-</main>
+<PageTransition {url}>
+  <main>
+    <slot />
+  </main>
+</PageTransition>
 
 <Footer />
 
