@@ -26,11 +26,17 @@
   }
 
   :global(body) {
-    --baseGreen: 177, 95%, 17%;
-    --green: hsl(var(--baseGreen));
-    --green-a70: hsla(var(--baseGreen), 0.7);
-    --green-a75: hsla(var(--baseGreen), 0.75);
-    --green-a80: hsla(var(--baseGreen), 0.8);
+    --green-hs: 177, 95%;
+    --green-l: 17%;
+    --green-base: var(--green-hs), var(--green-l);
+    --green: hsl(var(--green-hs), var(--green-l));
+    --green-d10-base: var(--green-hs), calc(var(--green-l) - 10%);
+    --green-d10: hsl(var(--green-d10-base));
+    --green-d10-a70: hsla(var(--green-d10-base), 0.7);
+    --green-60: hsl(var(--green-hs), calc(var(--green-l) + 60%));
+    --green-a70: hsla(var(--green-base), 0.7);
+    --green-a75: hsla(var(--green-base), 0.75);
+    --green-a80: hsla(var(--green-base), 0.8);
     --yellow: hsl(45, 87%, 55%);
     --paleRed: hsl(5, 38%, 47%);
     --red: hsl(0, 75%, 38%);
@@ -44,7 +50,9 @@
     --white-60: hsl(0, 0%, 60%);
     --white-70: hsl(0, 0%, 70%);
     --white-80: hsl(0, 0%, 80%);
-    --white-90: hsl(0, 0%, 90%);
+    --white-90-base: 0, 0%, 90%;
+    --white-90: hsl(var(--white-90-base));
+    --white-90-a98: hsla(var(--white-90-base), 0.98);
     --white-95: hsl(0, 0%, 95%);
     --white: hsl(0, 0%, 100%);
     --base-font: 'Noto Sans', sans-serif;
@@ -66,18 +74,21 @@
   :global(body) {
     --primary: var(--green);
     --primary-transparent: var(--green-a75);
+    --primary-dark: var(--green-d10);
+    --primary-dark-transparent: var(--green-d10-a70);
     --secondary: var(--yellow);
     --tertiary: var(--paleRed);
     --cta: var(--red);
     --ctaHighlight: var(--red-10);
     --lightBase: var(--white-90);
+    --lightBase-transparent: var(--white-90-a98);
     --darkBase: var(--black-20);
     --heading-font: var(--base-font);
     --body-font: var(--base-font);
   }
 
   :global(p) {
-    color: var(--black-20);
+    color: inherit;
     margin: 0;
   }
 

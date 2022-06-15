@@ -28,3 +28,9 @@
     on:load={() => (loaded = true)}
   />
 {/if}
+
+<style>
+  img {
+    margin: 0;
+  }
+</style>

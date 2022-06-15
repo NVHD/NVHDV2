@@ -72,7 +72,10 @@ export default {
     {
       name: 'image',
       title: 'Bild',
-      type: 'image'
+      type: 'image',
+      options: {
+        hotspot: true
+      }
     },
     {
       name: 'showFullImage',

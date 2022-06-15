@@ -17,6 +17,7 @@
     display: grid;
     max-width: 70ch;
     margin: auto;
+    padding: 0 1rem;
   }
 
   .primary {
