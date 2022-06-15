@@ -3,8 +3,10 @@
   import BtnCta from '../components/BtnCta.svelte'
   import Heading from '../components/Heading.svelte'
   import ImageComp from '../components/ImageComp.svelte'
+  import TerminCard from '../components/TerminCard.svelte'
 
-  export let figuren
+  export let data
+  let {figuren, termine} = data
 </script>
 
 <svelte:head>
@@ -12,7 +14,7 @@
 </svelte:head>
 
 <Section style={'white'}>
-  <Section>
+  <Section style={'white'}>
     <p>Brauchtum in seiner schönsten Form erleben</p>
 
     <h2>
@@ -20,7 +22,7 @@
     </h2>
   </Section>
 
-  <Section>
+  <Section style={'white'}>
     <h3>
       <Heading style={'h3'} firstLine={'unser'} secondLine={'Verein'} />
     </h3>
@@ -35,6 +37,14 @@
   <h3>
     <Heading style={'h3'} firstLine={'unsere'} secondLine={'Termine'} />
   </h3>
+
+  {#each termine as termin}
+    <a href={`/termine/${termin.slug.current}`} class="termin" sveltekit:noscroll>
+      <TerminCard title={termin.title} date={termin.date} dateText={termin.dateText} />
+    </a>
+  {/each}
+
+  <BtnCta link="/termine">alle Termine</BtnCta>
 </Section>
 
 <Section style={'primary'}>
@@ -49,3 +59,9 @@
 
   <BtnCta link="/kontakt">schreib uns</BtnCta>
 </Section>
+
+<style>
+  .termin {
+    margin: 0.5rem 0;
+  }
+</style>
