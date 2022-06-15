@@ -88,7 +88,7 @@
   }
 
   :global(p) {
-    color: inherit;
+    color: var(--darkBase);
     margin: 0;
   }
 

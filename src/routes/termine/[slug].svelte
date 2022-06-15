@@ -172,9 +172,13 @@
     display: none !important;
   }
 
-  .portableText {
+  :global(.portableText p) {
     color: var(--lightBase);
     line-height: 1.7;
+  }
+
+  p {
+    color: var(--lightBase);
   }
 
   h2 {
