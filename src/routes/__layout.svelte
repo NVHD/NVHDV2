@@ -1,17 +1,31 @@
 <script context="module">
-  export const load = async ({url}) => ({props: {url}})
+  export const load = async ({url, fetch}) => {
+    const res = await fetch('/logo.json')
+    const data = res.json()
+
+    return {
+      props: {
+        url,
+        data
+      }
+    }
+  }
 </script>
 
 <script>
   import PageTransition from '../components/PageTransition.svelte'
-  import Header from '$lib/Header.svelte'
+  import Header from '../components/Header.svelte'
   import Footer from '$lib/Footer.svelte'
 
   export let url
+  export let data
 </script>
 
-<Header blogTitle={'SvelteKit x Sanity Blog'} />
-
+{#await data}
+  <p>waiting.</p>
+{:then data}
+  <Header logo={data.data.logo} />
+{/await}
 <PageTransition {url}>
   <main>
     <slot />

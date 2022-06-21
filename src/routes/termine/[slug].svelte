@@ -204,7 +204,7 @@
 
   .back {
     position: sticky;
-    width: 100vw;
+    width: 100%;
     padding: 1rem 1rem;
     display: grid;
     grid-template-columns: min-content 1fr;
