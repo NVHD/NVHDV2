@@ -1,7 +1,8 @@
 <script>
+  export let btnClicked = false
 </script>
 
-<button on:click><span /></button>
+<button on:click><span class={btnClicked ? 'x' : ''} /></button>
 
 <style>
   button {
@@ -45,5 +46,23 @@
     border-bottom: 3px solid var(--lightBase);
     margin-bottom: 7px;
     transition: all 0.2s ease-in-out;
+  }
+
+  .x {
+    border-bottom: 3px solid transparent;
+  }
+
+  .x::before {
+    top: 0;
+    transform: rotate(45deg);
+    transform-origin: center;
+    border-bottom: 3px solid var(--secondary);
+  }
+
+  .x::after {
+    top: 0;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    border-bottom: 3px solid var(--secondary);
   }
 </style>

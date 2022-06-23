@@ -1,23 +1,34 @@
 <script>
+  import {fly, fade} from 'svelte/transition'
+  import {quintOut} from 'svelte/easing'
   import BurgerButton from './BurgerButton.svelte'
   import SanityImage from './../lib/SanityImage.svelte'
   import NavItem from './NavItem.svelte'
+  import {onMount} from 'svelte'
 
   export let logo
 
-  let navStyle = ''
-  let ulStyle = ''
-  let navBtnClicked = false
+  let isNavBtnClicked = false
+  let isFullStyle = false
 
-  const handleNavBtn = () => {
-    if (!navBtnClicked) {
-      navStyle = 'full'
-    } else {
-      navStyle = ''
+  onMount(() => {
+    const mediaQuery = window.matchMedia('(max-width: 1440px)')
+
+    const handleMediaBreak = (e) => {
+      // larger then 1440px
+      if (!e.matches) {
+        isNavBtnClicked = false
+        isFullStyle = true
+        // smaller then 1440px
+      } else {
+        isFullStyle = false
+      }
     }
 
-    navBtnClicked = !navBtnClicked
-  }
+    mediaQuery.addEventListener('change', handleMediaBreak)
+
+    handleMediaBreak(mediaQuery)
+  })
 </script>
 
 <header>
@@ -25,36 +36,46 @@
     <SanityImage image={logo} />
   </a>
 
-  <nav class={navStyle}>
-    <ul class={ulStyle}>
-      <li>
-        <NavItem link={'/'} title={'Startseite'} />
-      </li>
-      <li>
-        <NavItem link={'/figuren'} title={'Figuren'} />
-      </li>
-      <li>
-        <NavItem link={'/dorffasnet'} title={'Dorffasnet'} />
-      </li>
-      <li>
-        <NavItem link={'/termine'} title={'Termine'} />
-      </li>
-      <li>
-        <NavItem link={'/chronik'} title={'Chronik'} />
-      </li>
-      <li>
-        <NavItem link={'/galerie'} title={'Galerie'} />
-      </li>
-      <li>
-        <NavItem link={'/vorstand'} title={'Vorstand'} />
-      </li>
-      <li>
-        <NavItem link={'/kontakt'} title={'Kontakt'} />
-      </li>
-    </ul>
-  </nav>
+  {#if isNavBtnClicked || isFullStyle}
+    <nav
+      class={isNavBtnClicked ? 'full' : ''}
+      transition:fly|local={{x: 1500, y: -1500, duration: 300, easing: quintOut}}
+    >
+      <ul transition:fade|local={{delay: 250, duration: 100}}>
+        <li>
+          <NavItem link={'/'} title={'Startseite'} />
+        </li>
+        <li>
+          <NavItem link={'/figuren'} title={'Figuren'} />
+        </li>
+        <li>
+          <NavItem link={'/dorffasnet'} title={'Dorffasnet'} />
+        </li>
+        <li>
+          <NavItem link={'/termine'} title={'Termine'} />
+        </li>
+        <li>
+          <NavItem link={'/chronik'} title={'Chronik'} />
+        </li>
+        <li>
+          <NavItem link={'/galerie'} title={'Galerie'} />
+        </li>
+        <li>
+          <NavItem link={'/vorstand'} title={'Vorstand'} />
+        </li>
+        <li>
+          <NavItem link={'/kontakt'} title={'Kontakt'} />
+        </li>
+      </ul>
+    </nav>
+  {/if}
   <div class="btnNav">
-    <BurgerButton on:click={handleNavBtn} />
+    <BurgerButton
+      on:click={() => {
+        isNavBtnClicked = !isNavBtnClicked
+      }}
+      btnClicked={isNavBtnClicked}
+    />
   </div>
 </header>
 
@@ -83,6 +104,12 @@
   li {
     list-style: none;
     padding: 0 1rem;
+    backface-visibility: hidden;
+    transition: transform 0.2s ease-out;
+  }
+
+  li:hover {
+    transform: scale(1.1);
   }
 
   .btnNav {
@@ -103,7 +130,6 @@
     justify-content: center;
     align-items: center;
     background-color: var(--primary);
-    transition: all 0.2s ease-in-out;
   }
 
   @media only screen and (max-width: 1440px) {
