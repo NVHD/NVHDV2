@@ -15,7 +15,7 @@
 <script>
   import PageTransition from '../components/PageTransition.svelte'
   import Header from '../components/Header.svelte'
-  import Footer from '$lib/Footer.svelte'
+  import Footer from '../components/Footer.svelte'
 
   export let url
   export let data
