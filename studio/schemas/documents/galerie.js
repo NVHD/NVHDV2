@@ -9,6 +9,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'cover',
+      title: 'Titelbild',
+      type: 'image'
+    },
+    {
       name: 'slug',
       title: 'slug',
       type: 'slug',

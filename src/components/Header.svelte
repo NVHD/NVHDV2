@@ -91,7 +91,7 @@
     align-items: center;
     background-color: var(--primary);
     box-shadow: 5px 5px 10px hsla(0, 0%, 0%, 0.15);
-    z-index: 5000;
+    z-index: 500;
   }
 
   ul {
