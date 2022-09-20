@@ -8,5 +8,8 @@ export const appStore = writable({
     day: '2-digit',
     hour: '2-digit',
     minute: '2-digit'
-  }
+  },
+  modalIsOpen: false,
+  isLightBoxOpen: false,
+  galleryClickedImage: undefined
 })
