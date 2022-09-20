@@ -86,13 +86,9 @@
       <BtnArrow
         direction="right"
         on:click={() => {
-          switchImage('right')
         }}
       />
-    </div>
-  </Modal>
-{/if}
-
+=======
 <style>
   .lightBox {
     display: grid;
