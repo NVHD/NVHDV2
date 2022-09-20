@@ -23,12 +23,12 @@
   function handleKeyPresses(e) {
     switch (e.code) {
       case 'ArrowRight':
-      case 'KeyA':
+      case 'KeyD':
         switchImage('right')
         break
 
       case 'ArrowLeft':
-      case 'KeyD':
+      case 'KeyA':
         switchImage('left')
         break
 
