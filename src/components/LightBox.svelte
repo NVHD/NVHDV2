@@ -21,12 +21,14 @@
   let isLeftBtnClick
 
   function handleKeyPresses(e) {
-    switch (e.key) {
+    switch (e.code) {
       case 'ArrowRight':
+      case 'KeyA':
         switchImage('right')
         break
 
       case 'ArrowLeft':
+      case 'KeyD':
         switchImage('left')
         break
 
@@ -86,9 +88,13 @@
       <BtnArrow
         direction="right"
         on:click={() => {
+          switchImage('right')
         }}
       />
-=======
+    </div>
+  </Modal>
+{/if}
+
 <style>
   .lightBox {
     display: grid;
