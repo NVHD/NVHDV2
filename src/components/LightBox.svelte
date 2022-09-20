@@ -8,13 +8,51 @@
 
   export let imgs = []
 
-  onMount(() => () => {
-    $appStore.isLightBoxOpen = false
+  onMount(() => {
+    window.addEventListener('keydown', handleKeyPresses)
+
+    return () => {
+      $appStore.isLightBoxOpen = false
+    }
   })
 
   const slideLeft = 500
   const slideRight = -500
   let isLeftBtnClick
+
+  function handleKeyPresses(e) {
+    switch (e.key) {
+      case 'ArrowRight':
+        switchImage('right')
+        break
+
+      case 'ArrowLeft':
+        switchImage('left')
+        break
+
+      case 'Escape':
+        $appStore.isLightBoxOpen = false
+        break
+    }
+  }
+
+  function switchImage(direction) {
+    if (direction === 'left') {
+      isLeftBtnClick = true
+      if ($appStore.galleryClickedImage === 0) {
+        $appStore.galleryClickedImage = imgs.length - 1
+      } else {
+        $appStore.galleryClickedImage--
+      }
+    } else if (direction === 'right') {
+      isLeftBtnClick = false
+      if ($appStore.galleryClickedImage === imgs.length - 1) {
+        $appStore.galleryClickedImage = 0
+      } else {
+        $appStore.galleryClickedImage++
+      }
+    }
+  }
 </script>
 
 {#if $appStore.isLightBoxOpen}
@@ -23,12 +61,7 @@
       <BtnArrow
         direction="left"
         on:click={() => {
-          isLeftBtnClick = true
-          if ($appStore.galleryClickedImage === 0) {
-            $appStore.galleryClickedImage = imgs.length - 1
-          } else {
-            $appStore.galleryClickedImage--
-          }
+          switchImage('left')
         }}
       />
       {#key $appStore.galleryClickedImage}
@@ -44,6 +77,8 @@
             easing: quintOut
           }}
           class="lightBoxImg"
+          width={imgs[$appStore.galleryClickedImage].width}
+          height={imgs[$appStore.galleryClickedImage].height}
           src={imgs[$appStore.galleryClickedImage].src}
           alt={`Productbild-${$appStore.galleryClickedImage}`}
         />
@@ -51,12 +86,7 @@
       <BtnArrow
         direction="right"
         on:click={() => {
-          isLeftBtnClick = false
-          if ($appStore.galleryClickedImage === imgs.length - 1) {
-            $appStore.galleryClickedImage = 0
-          } else {
-            $appStore.galleryClickedImage++
-          }
+          switchImage('right')
         }}
       />
     </div>
