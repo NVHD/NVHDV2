@@ -4,8 +4,12 @@
   export let secondLine
 </script>
 
-<span class="firstLine-{style}">{firstLine}<br /> </span>
-<span class="secondLine-{style}">{secondLine}</span>
+{#if firstLine}
+  <span class="firstLine-{style}">{firstLine}<br /> </span>
+{/if}
+{#if secondLine}
+  <span class="secondLine-{style}">{secondLine}</span>
+{/if}
 
 <style>
   .firstLine-h2 {
