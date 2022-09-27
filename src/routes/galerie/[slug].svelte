@@ -1,4 +1,6 @@
 <script>
+  import {goto} from '$app/navigation'
+  import BtnArrow from './../../components/BtnArrow.svelte'
   import Heading from './../../components/Heading.svelte'
   import Gallery from 'svelte-gallery'
   import ImageComponent from '../../components/GalleryImage.svelte'
@@ -19,6 +21,10 @@
 
     resolve(imgArray)
   })
+
+  function handleBackBtn() {
+    goto(`/galerie`, {replaceState: true})
+  }
 </script>
 
 {#await getImgArray}
@@ -27,7 +33,12 @@
   <LightBox imgs={galleryImages} />
 
   <section>
-    <h2><Heading firstLine={title} style={'h3'} /></h2>
+    <div class="heading">
+      <div class="btn">
+        <BtnArrow direction={'left'} bg={true} on:click={() => handleBackBtn()} />
+      </div>
+      <h2><Heading firstLine={title} style={'h3'} /></h2>
+    </div>
 
     <Gallery images={galleryImages} gutter={5} imageComponent={ImageComponent} />
   </section>
@@ -37,5 +48,18 @@
   section {
     background-color: var(--lightBase);
     padding: 5px 5px 5rem 5px;
+  }
+
+  .heading {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn {
+    transform: translateX(-5px);
+  }
+
+  h2 {
+    margin-left: 3rem;
   }
 </style>

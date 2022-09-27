@@ -5,10 +5,11 @@
   const dispatch = createEventDispatcher()
 
   export let direction
+  export let bg
 </script>
 
 <button
-  class={direction}
+  class={`${direction} ${bg ? 'background' : ''}`}
   on:click={() => {
     dispatch('click')
   }}><ArrowIcon width={25} height={30} shadow={false} fill={'#f0be28'} /></button
@@ -27,5 +28,11 @@
 
   .right {
     transform: rotate(270deg);
+  }
+
+  .background {
+    background-color: var(--primary);
+    width: 5rem;
+    height: 5rem;
   }
 </style>

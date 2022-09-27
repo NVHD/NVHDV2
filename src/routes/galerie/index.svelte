@@ -4,7 +4,6 @@
   import Heading from '../../components/Heading.svelte'
 
   export let gallery
-  console.log(gallery)
 </script>
 
 <Section style={'white'}>
