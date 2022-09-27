@@ -81,6 +81,7 @@
     --base-font: 'Noto Sans', sans-serif;
     --bodyFontSize: 18px;
     --baseFontSize: 1rem;
+    --ctaFontSize: 1.5rem;
     --smallFontSize: 0.8rem;
     --smallestFontSize: 0.62rem;
     --heading-1: 1.953rem;
@@ -137,5 +138,18 @@
 
   :global(h3) {
     color: var(--primary);
+  }
+
+  @media only screen and (max-width: 720px) {
+    :global(:root) {
+      font-size: 85%;
+    }
+
+    :global(body) {
+      --heading-2: 2.13rem;
+      --heading-2-secondary: 4.8rem;
+      --heading-3: 2rem;
+      --heading-3-secondary: 4.7rem;
+    }
   }
 </style>

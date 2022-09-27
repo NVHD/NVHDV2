@@ -19,7 +19,7 @@
     color: var(--white-80);
     font-family: var(--base-font);
     font-weight: 700;
-    font-size: 2rem;
+    font-size: var(--ctaFontSize);
     text-transform: uppercase;
     border-radius: 10px;
     box-shadow: 0 20px 40px rgb(0 0 0 / 15%);

@@ -8,7 +8,7 @@
   {#each data[0].figuren as figur}
     <figure>
       <SanityImage image={figur.bild} />
-      <figcaption>{figur.name}</figcaption>
+      <figcaption class="figurNames">{figur.name}</figcaption>
     </figure>
   {/each}
 </div>
@@ -31,5 +31,19 @@
   figure {
     border: none;
     padding: 0;
+  }
+
+  @media only screen and (max-width: 500px) {
+    figure:first-child {
+      transform: translateX(4rem);
+    }
+
+    figure:last-child {
+      transform: translateX(-4rem);
+    }
+
+    .figurNames {
+      opacity: 0;
+    }
   }
 </style>

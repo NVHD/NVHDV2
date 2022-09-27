@@ -73,4 +73,10 @@
       font-size: 3vw;
     }
   }
+
+  @media only screen and (max-width: 430px) {
+    .gallery {
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+  }
 </style>
