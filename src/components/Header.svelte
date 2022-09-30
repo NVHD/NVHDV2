@@ -1,14 +1,14 @@
 <script>
+  import {onMount} from 'svelte'
+  import {appStore} from '../stores'
   import {fly, fade} from 'svelte/transition'
   import {quintOut} from 'svelte/easing'
   import BurgerButton from './BurgerButton.svelte'
   import SanityImage from './../lib/SanityImage.svelte'
   import NavItem from './NavItem.svelte'
-  import {onMount} from 'svelte'
 
   export let logo
 
-  let isNavBtnClicked = false
   let isFullStyle = false
 
   onMount(() => {
@@ -18,7 +18,7 @@
     const handleMediaBreak = (e) => {
       // larger then 1440px
       if (!e.matches) {
-        isNavBtnClicked = false
+        $appStore.isNavOpen = false
         isFullStyle = true
         // smaller then 1440px
       } else {
@@ -37,9 +37,9 @@
     <SanityImage image={logo} />
   </a>
 
-  {#if isNavBtnClicked || isFullStyle}
+  {#if $appStore.isNavOpen || isFullStyle}
     <nav
-      class={isNavBtnClicked ? 'full' : ''}
+      class={$appStore.isNavOpen ? 'full' : ''}
       transition:fly|local={{x: 1500, y: -1500, duration: 300, easing: quintOut}}
     >
       <ul transition:fade|local={{delay: 250, duration: 100}}>
@@ -73,9 +73,9 @@
   <div class="btnNav">
     <BurgerButton
       on:click={() => {
-        isNavBtnClicked = !isNavBtnClicked
+        $appStore.isNavOpen = !$appStore.isNavOpen
       }}
-      btnClicked={isNavBtnClicked}
+      btnClicked={$appStore.isNavOpen}
     />
   </div>
 </header>

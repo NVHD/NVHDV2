@@ -1,11 +1,19 @@
 <script>
+  import {appStore} from './../stores.js'
   import Heuliecher from './icons/Heuliecher.svelte'
 
   export let link
   export let title
 </script>
 
-<a href={link}>
+<a
+  href={link}
+  on:click={() => {
+    setTimeout(() => {
+      $appStore.isNavOpen = false
+    }, 200)
+  }}
+>
   <Heuliecher fill={'#f0be28'} />
   <span> {title} </span>
 </a>

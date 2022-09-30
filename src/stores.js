@@ -11,5 +11,6 @@ export const appStore = writable({
   },
   modalIsOpen: false,
   isLightBoxOpen: false,
-  galleryClickedImage: undefined
+  galleryClickedImage: undefined,
+  isNavOpen: false
 })
