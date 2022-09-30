@@ -12,6 +12,7 @@
   let isFullStyle = false
 
   onMount(() => {
+    console.log('is any body out there?')
     const mediaQuery = window.matchMedia('(max-width: 1440px)')
 
     const handleMediaBreak = (e) => {

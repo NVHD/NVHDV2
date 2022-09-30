@@ -10,12 +10,14 @@
 
 <style>
   section {
+    display: flex;
     padding: 2rem 0;
   }
 
   .content {
     display: grid;
     max-width: 70ch;
+    width: 100%;
     margin: auto;
     padding: 0 1rem;
   }

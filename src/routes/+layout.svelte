@@ -1,32 +1,17 @@
-<script context="module">
-  export const load = async ({url, fetch}) => {
-    const res = await fetch('/logo.json')
-    const data = res.json()
-
-    return {
-      props: {
-        url,
-        data
-      }
-    }
-  }
-</script>
-
 <script>
   import PageTransition from '../components/PageTransition.svelte'
   import Header from '../components/Header.svelte'
   import Footer from '../components/Footer.svelte'
 
-  export let url
   export let data
 </script>
 
 {#await data}
   <p>waiting.</p>
 {:then data}
-  <Header logo={data.data.logo} />
+  <Header logo={data.body.data.logo} />
 {/await}
-<PageTransition {url}>
+<PageTransition url={data.body.url}>
   <main>
     <slot />
   </main>
@@ -36,6 +21,12 @@
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+  /* To fix pages that don't have content to fill the entire page */
+  main {
+    min-height: 100vh;
+    display: grid;
+  }
 
   :global(:root) {
     font-size: 100%;

@@ -4,9 +4,15 @@
   import Heading from '../components/Heading.svelte'
   import ImageComp from '../components/ImageComp.svelte'
   import TerminCard from '../components/TerminCard.svelte'
+  import {onMount} from 'svelte'
+  import {browser, dev, prerendering} from '$app/environment'
 
   export let data
-  let {figuren, termine} = data
+  let {figuren, termine} = data.body.data
+
+  if (browser) {
+    console.log('hellow?!')
+  }
 </script>
 
 <svelte:head>

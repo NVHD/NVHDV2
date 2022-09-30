@@ -1,13 +1,13 @@
 import {client} from '$lib/sanityClient'
 
-export async function get() {
-  const data = await client.fetch(`*[_type == "galerie"]{title, cover, slug}`)
+export async function load() {
+  const data = await client.fetch(`*[_type == "chronik"]{text}`)
 
   if (data) {
     return {
       status: 200,
       body: {
-        gallery: data
+        text: data
       }
     }
   }

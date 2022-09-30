@@ -1,12 +1,11 @@
 <script>
   import {PortableText} from '@portabletext/svelte'
-  import Heading from '../components/Heading.svelte'
-  import Section from '../components/Section.svelte'
-  import Image from '../components/PortableText/Image.svelte'
+  import Heading from '../../components/Heading.svelte'
+  import Section from '../../components/Section.svelte'
+  import Image from '../../components/PortableText/Image.svelte'
 
-  export let text
-
-  console.log(text)
+  export let data
+  let {text} = data.body
 </script>
 
 <Section style={'tertiary'}>

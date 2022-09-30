@@ -1,6 +1,6 @@
 import {client} from '$lib/sanityClient'
 
-export async function get() {
+export async function load() {
   const data = {}
   data.figuren = await client.fetch(
     `*[_type == "imageComp" && place[0] == "index" || _type == "imageComp"]{figuren[]->}`

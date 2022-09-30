@@ -1,15 +1,15 @@
 import {client} from '$lib/sanityClient'
 
-export async function get() {
+export async function load({params: {slug}}) {
   const data = await client.fetch(
-    `*[_type == "figur" && einsatz[0] == "verein"]{bild, description, name}`
+    `*[_type == "termin" && slug.current == "${slug}"][0]{date, dateText, startTime, endTime, description, featured, image, location, locationName, slug, title}`
   )
 
   if (data) {
     return {
       status: 200,
       body: {
-        figuren: data
+        termin: data
       }
     }
   }

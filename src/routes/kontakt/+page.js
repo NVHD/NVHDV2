@@ -1,6 +1,6 @@
 import {client} from '$lib/sanityClient'
 
-export async function get() {
+export async function load() {
   const data = await client.fetch(
     `*[
       _type == "person" 

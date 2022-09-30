@@ -3,7 +3,8 @@
   import SanityImage from '../../lib/SanityImage.svelte'
   import Heading from '../../components/Heading.svelte'
 
-  export let gallery
+  export let data
+  let gallery = data.body.gallery
 </script>
 
 <Section style={'white'}>

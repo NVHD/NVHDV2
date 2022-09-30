@@ -1,13 +1,14 @@
 <script>
   import {goto} from '$app/navigation'
-  import BtnArrow from './../../components/BtnArrow.svelte'
-  import Heading from './../../components/Heading.svelte'
   import Gallery from 'svelte-gallery'
-  import ImageComponent from '../../components/GalleryImage.svelte'
-  import LightBox from '../../components/LightBox.svelte'
+  import BtnArrow from '../../../components/BtnArrow.svelte'
+  import Heading from '../../../components/Heading.svelte'
+  import ImageComponent from '../../../components/GalleryImage.svelte'
+  import LightBox from '../../../components/LightBox.svelte'
 
-  export let images
-  export let title
+  export let data
+
+  let {images, title} = data.body
 
   const getImgArray = new Promise((resolve, reject) => {
     const imgArray = images.map((image, i) => {

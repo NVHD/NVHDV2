@@ -1,20 +1,21 @@
 <script>
-  import Heading from '../components/Heading.svelte'
-  import Section from '../components/Section.svelte'
+  import Heading from '../../components/Heading.svelte'
+  import Section from '../../components/Section.svelte'
   import SanityImage from '$lib/SanityImage.svelte'
 
-  export let figuren
-
-  console.log(figuren)
+  export let data
+  let figuren = data.body.figuren
 </script>
 
 <Section style={'white'}>
   <h2>
-    <Heading style={'h3'} firstLine={'unsere'} secondLine={'Figuren'} />
+    <Heading style={'h3'} firstLine={'die'} secondLine={'Dorffasnet'} />
   </h2>
 
   {#each figuren as figur}
-    <SanityImage image={figur.bild} />
+    <div class="img">
+      <SanityImage image={figur.bild} />
+    </div>
     <h3>{figur.name}</h3>
     <p>{figur.description}</p>
   {/each}
@@ -30,7 +31,12 @@
     justify-self: center;
   }
 
-  :global(img) {
+  .img {
     justify-self: center;
+    padding: 8rem 0 1rem 0;
+  }
+
+  p:last-of-type {
+    padding-bottom: 8rem;
   }
 </style>

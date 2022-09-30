@@ -1,20 +1,21 @@
 <script>
-  import SanityImage from './../../lib/SanityImage.svelte'
+  import SanityImage from '$lib/SanityImage.svelte'
   import {Map, Geocoder, Marker, controls} from '@beyonk/svelte-mapbox'
   import {PortableText} from '@portabletext/svelte'
   import {onMount} from 'svelte'
   import {fly} from 'svelte/transition'
   import {quintOut} from 'svelte/easing'
-  import {formatTimeString, getDate, getTime, getWeekDay} from '../../lib/dateTime'
-  import Section from '../../components/Section.svelte'
-  import ArrowWideRight from '../../components/icons/ArrowWideRight.svelte'
-  import ArrowLeft from '../../components/icons/ArrowLeft.svelte'
-  import ArrowRight from '../../components/icons/ArrowRight.svelte'
-  import Calendar from '../../components/icons/Calendar.svelte'
-  import Clock from '../../components/icons/Clock.svelte'
-  import Location from '../../components/icons/Location.svelte'
+  import {formatTimeString, getDate, getTime, getWeekDay} from '$lib/dateTime'
+  import Section from '../../../components/Section.svelte'
+  import ArrowWideRight from '../../../components/icons/ArrowWideRight.svelte'
+  import ArrowLeft from '../../../components/icons/ArrowLeft.svelte'
+  import ArrowRight from '../../../components/icons/ArrowRight.svelte'
+  import Calendar from '../../../components/icons/Calendar.svelte'
+  import Clock from '../../../components/icons/Clock.svelte'
+  import Location from '../../../components/icons/Location.svelte'
 
-  export let termin
+  export let data
+  let termin = data.body.termin
 
   let mapComponent
   let isIntersecting = false

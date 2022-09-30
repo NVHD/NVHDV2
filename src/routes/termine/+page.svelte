@@ -3,7 +3,8 @@
   import Section from '../../components/Section.svelte'
   import TerminCard from '../../components/TerminCard.svelte'
 
-  export let termine
+  export let data
+  let termine = data.body.termine
 </script>
 
 <Section style={'secondary'}>

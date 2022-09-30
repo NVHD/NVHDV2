@@ -1,9 +1,10 @@
 <script>
-  import Heading from '../components/Heading.svelte'
-  import Section from '../components/Section.svelte'
-  import {getGender} from '../lib/getGender'
+  import Heading from '../../components/Heading.svelte'
+  import Section from '../../components/Section.svelte'
+  import {getGender} from '../../lib/getGender'
 
-  export let personen
+  export let data
+  let {personen} = data.body
 
   // Add each person to its role
   // ( There is only one role per Person so I can hardcode the 0 )

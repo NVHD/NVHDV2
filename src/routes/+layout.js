@@ -1,13 +1,16 @@
 import {client} from '$lib/sanityClient'
 
-export async function get() {
-  const data = await client.fetch(`*[_type == "person"]{name, anrede, rolle}`)
+export const prerender = true
+
+export const load = async ({url}) => {
+  const data = await client.fetch(`*[_type == "einstellungen"][0]{logo}`)
 
   if (data) {
     return {
       status: 200,
       body: {
-        personen: data
+        data,
+        url
       }
     }
   }
