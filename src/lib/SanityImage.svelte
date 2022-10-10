@@ -24,7 +24,6 @@
   onMount(() => {
     imageRef.onload = () => {
       loaded = true
-      console.log('img loaded!')
     }
   })
 </script>

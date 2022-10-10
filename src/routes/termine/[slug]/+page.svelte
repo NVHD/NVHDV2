@@ -54,7 +54,7 @@
   </div>
 </Section>
 
-<a href="/termine" class={isIntersecting ? 'back' : 'back fixed'} sveltekit:noscroll>
+<a href="/termine" class={isIntersecting ? 'back' : 'back fixed'} data-sveltekit-noscroll>
   <div class="icon"><ArrowWideRight /></div>
 
   {#if !isIntersecting && !onlyTitle}

@@ -5,7 +5,7 @@
   const dispatch = createEventDispatcher()
 
   export let direction
-  export let bg
+  export let bg = false
 </script>
 
 <button

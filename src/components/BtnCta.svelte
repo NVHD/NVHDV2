@@ -2,7 +2,7 @@
   export let link
 </script>
 
-<a href={link} sveltekit:noscroll><button><slot /> </button></a>
+<a href={link} data-sveltekit-noscroll><button><slot /> </button></a>
 
 <style>
   a {

@@ -29,4 +29,10 @@
     text-transform: uppercase;
     margin-left: 0.5rem;
   }
+
+  @media only screen and (max-width: 1440px) {
+    a {
+      font-size: 1.5rem;
+    }
+  }
 </style>

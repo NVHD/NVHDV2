@@ -11,6 +11,19 @@
   onMount(() => {
     window.addEventListener('keydown', handleKeyPresses)
 
+    document.addEventListener('touchmove', (e) => {
+      e.preventDefault()
+    })
+
+    document.addEventListener('touchstart', (e) => {
+      touchstartX = e.changedTouches[0].screenX
+    })
+
+    document.addEventListener('touchend', (e) => {
+      touchendX = e.changedTouches[0].screenX
+      checkDirection()
+    })
+
     return () => {
       $appStore.isLightBoxOpen = false
     }
@@ -18,7 +31,21 @@
 
   const slideLeft = 500
   const slideRight = -500
+  let touchstartX = 0
+  let touchendX = 0
   let isLeftBtnClick
+
+  // https://stackoverflow.com/a/56663695/13267067
+  function checkDirection() {
+    // swipe left
+    if (touchendX < touchstartX) {
+      switchImage('right')
+    }
+    // swipe right
+    if (touchendX > touchstartX) {
+      switchImage('left')
+    }
+  }
 
   function handleKeyPresses(e) {
     switch (e.code) {
@@ -60,12 +87,14 @@
 {#if $appStore.isLightBoxOpen}
   <Modal name={'isLightBoxOpen'}>
     <div class="lightBox">
-      <BtnArrow
-        direction="left"
-        on:click={() => {
-          switchImage('left')
-        }}
-      />
+      <div class="btn">
+        <BtnArrow
+          direction="left"
+          on:click={() => {
+            switchImage('left')
+          }}
+        />
+      </div>
       {#key $appStore.galleryClickedImage}
         <img
           in:fly={{
@@ -85,12 +114,14 @@
           alt={`Productbild-${$appStore.galleryClickedImage}`}
         />
       {/key}
-      <BtnArrow
-        direction="right"
-        on:click={() => {
-          switchImage('right')
-        }}
-      />
+      <div class="btn">
+        <BtnArrow
+          direction="right"
+          on:click={() => {
+            switchImage('right')
+          }}
+        />
+      </div>
     </div>
   </Modal>
 {/if}
@@ -112,5 +143,20 @@
     object-fit: contain;
     padding: 2rem;
     pointer-events: none;
+  }
+
+  @media only screen and (max-width: 920px) {
+    .lightBoxImg {
+      max-height: unset;
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+      pointer-events: none;
+    }
+
+    .btn {
+      display: none;
+    }
   }
 </style>

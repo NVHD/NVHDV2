@@ -9,10 +9,6 @@
 
   export let data
   let {figuren, termine} = data.body.data
-
-  if (browser) {
-    console.log('hellow?!')
-  }
 </script>
 
 <svelte:head>
@@ -45,7 +41,7 @@
   </h3>
 
   {#each termine as termin}
-    <a href={`/termine/${termin.slug.current}`} class="termin" sveltekit:noscroll>
+    <a href={`/termine/${termin.slug.current}`} class="termin" data-sveltekit-noscroll>
       <TerminCard title={termin.title} date={termin.date} dateText={termin.dateText} />
     </a>
   {/each}

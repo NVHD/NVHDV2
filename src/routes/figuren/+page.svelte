@@ -39,4 +39,19 @@
   p:last-of-type {
     padding-bottom: 8rem;
   }
+
+  @media only screen and (max-width: 720px) {
+    .img {
+      justify-self: center;
+      padding: 3rem 0 0.5rem 0;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    p:last-of-type {
+      padding-bottom: 4rem;
+    }
+  }
 </style>

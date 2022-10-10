@@ -3,12 +3,20 @@
   import {onMount} from 'svelte'
   import {fade, scale} from 'svelte/transition'
   import BtnClose from './BtnClose.svelte'
+  import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock'
 
   export let backgroundImage = undefined
   export let name
 
   onMount(() => {
     $appStore[name] = true
+
+    const overlay = document.querySelector('.modal')
+    disableBodyScroll(overlay)
+
+    return () => {
+      enableBodyScroll(overlay)
+    }
   })
 </script>
 
@@ -51,6 +59,7 @@
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(12px) brightness(0.3);
+    -webkit-backdrop-filter: blur(12px) brightness(0.3);
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -74,13 +83,6 @@
     background-size: cover;
     z-index: 1001;
   }
-
-  @media only screen and (min-width: 480px) {
-    .modal {
-      padding: 5rem;
-    }
-  }
-
   .content {
     grid-row: 1 / 2;
     grid-column: 1 /2;
@@ -91,5 +93,16 @@
     grid-column: 1 / 2;
     justify-self: end;
     margin: -2rem;
+  }
+  @media only screen and (max-width: 920px) {
+    .btnRemove {
+      align-self: end;
+      margin: 5rem;
+    }
+
+    .modal {
+      padding: 1rem;
+      overflow-y: hidden;
+    }
   }
 </style>

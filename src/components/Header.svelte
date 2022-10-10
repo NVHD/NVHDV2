@@ -12,7 +12,6 @@
   let isFullStyle = false
 
   onMount(() => {
-    console.log('is any body out there?')
     const mediaQuery = window.matchMedia('(max-width: 1440px)')
 
     const handleMediaBreak = (e) => {
@@ -153,6 +152,12 @@
 
     li {
       padding: 0.5rem 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 720px) {
+    li {
+      padding: 0.75rem 1rem;
     }
   }
 </style>

@@ -1,7 +1,7 @@
 <script>
   export let style
-  export let firstLine
-  export let secondLine
+  export let firstLine = undefined
+  export let secondLine = undefined
 </script>
 
 {#if firstLine}

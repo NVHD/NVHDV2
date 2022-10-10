@@ -11,7 +11,7 @@
   <h2><Heading style={'h3'} firstLine={'unsere'} secondLine={'Termine'} /></h2>
 
   {#each termine as termin}
-    <a href={`/termine/${termin.slug.current}`} class="termin" sveltekit:noscroll>
+    <a href={`/termine/${termin.slug.current}`} class="termin" data-sveltekit-noscroll>
       <TerminCard title={termin.title} date={termin.date} dateText={termin.dateText} />
     </a>
   {/each}
