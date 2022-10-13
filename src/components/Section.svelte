@@ -10,7 +10,6 @@
 
 <style>
   section {
-    display: flex;
     padding: 2rem 0;
   }
 
