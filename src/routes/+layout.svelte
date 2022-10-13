@@ -105,6 +105,7 @@
   :global(p) {
     color: var(--darkBase);
     margin: 0;
+    max-width: 70ch;
   }
 
   :global(figcaption) {

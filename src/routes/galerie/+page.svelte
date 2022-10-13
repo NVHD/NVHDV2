@@ -27,7 +27,7 @@
 <style>
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .cover {
@@ -72,12 +72,6 @@
   @media only screen and (min-width: 900px) {
     .title {
       font-size: 3vw;
-    }
-  }
-
-  @media only screen and (max-width: 430px) {
-    .gallery {
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     }
   }
 </style>

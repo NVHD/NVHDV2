@@ -57,6 +57,10 @@
     font-size: 0.8rem;
   }
 
+  a:visited {
+    color: var(--secondary);
+  }
+
   .social {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

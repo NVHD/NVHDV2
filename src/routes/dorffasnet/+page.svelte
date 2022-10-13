@@ -36,6 +36,10 @@
     padding: 8rem 0 1rem 0;
   }
 
+  p {
+    margin: auto;
+  }
+
   p:last-of-type {
     padding-bottom: 8rem;
   }

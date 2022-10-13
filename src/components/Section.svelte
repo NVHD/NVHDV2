@@ -16,7 +16,7 @@
 
   .content {
     display: grid;
-    max-width: 70ch;
+    max-width: 90ch;
     width: 100%;
     margin: auto;
     padding: 0 1rem;
