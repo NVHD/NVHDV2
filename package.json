@@ -4,8 +4,8 @@
   "scripts": {
     "dev": "vite dev",
     "host": "vite dev --host",
-    "build": "svelte-kit build",
-    "preview": "svelte-kit preview",
+    "build": "vite build",
+    "preview": "vite preview",
     "build:sanity": "cd studio && npm run build",
     "start:sanity": "cd studio && npm run dev",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
