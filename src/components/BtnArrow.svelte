@@ -1,6 +1,6 @@
 <script>
   import {createEventDispatcher} from 'svelte'
-  import ArrowIcon from './Icons/Arrow.svelte'
+  import ArrowIcon from './icons/Arrow.svelte'
 
   const dispatch = createEventDispatcher()
 
