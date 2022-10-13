@@ -1,6 +1,6 @@
 <script>
   import {createEventDispatcher} from 'svelte'
-  import CrossIcon from './Icons/Cross.svelte'
+  import CrossIcon from './icons/Cross.svelte'
 
   const dispatch = createEventDispatcher()
 </script>
