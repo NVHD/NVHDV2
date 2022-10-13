@@ -96,12 +96,13 @@
   }
   @media only screen and (max-width: 920px) {
     .btnRemove {
-      align-self: end;
-      margin: 5rem;
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
     }
 
     .modal {
-      padding: 1rem;
+      padding: 0;
       overflow-y: hidden;
     }
   }
