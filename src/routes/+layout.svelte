@@ -26,6 +26,8 @@
   main {
     min-height: 100vh;
     display: grid;
+    grid-template-rows: 1fr;
+    grid-auto-rows: min-content;
   }
 
   :global(:root) {
@@ -84,6 +86,7 @@
     --heading-5: var(--smallFontSize);
     --heading-6: 0.64rem;
     --heading-7: var(--smallestFontSize);
+    --content-width: 60rem;
   }
 
   :global(body) {

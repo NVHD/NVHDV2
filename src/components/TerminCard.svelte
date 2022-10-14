@@ -6,11 +6,26 @@
   export let title
   export let date
   export let dateText = null
+
+  function handleDate() {
+    if (dateText) {
+      return dateText
+    }
+
+    // The date string includes a T if the date has a time value
+    if (!date.includes('T')) {
+      return getDate(new Date(date))
+    }
+
+    return `${getDate(new Date(date))} - ${getTime(new Date(date))}`
+  }
 </script>
 
 <div class="card">
   <div class="info">
-    <p>{dateText ? dateText : `${getDate(new Date(date))} - ${getTime(new Date(date))}`}</p>
+    <p>
+      {handleDate()}
+    </p>
     <h3>{title}</h3>
   </div>
   <div class="icon">
