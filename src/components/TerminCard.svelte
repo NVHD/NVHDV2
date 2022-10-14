@@ -38,15 +38,17 @@
     display: grid;
     grid-template-columns: 1fr min-content;
     align-items: center;
-    background-color: var(--primary-transparent);
+    background-color: var(--primary);
     margin: 0;
     padding: 1rem;
     cursor: pointer;
-    transition: all 0.1s ease-out;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease-out;
   }
 
   .card:hover {
-    background-color: var(--primary);
+    transform: translate3d(1px, -1px, 0);
+    background-color: var(--primary-transparent);
   }
 
   .icon {
