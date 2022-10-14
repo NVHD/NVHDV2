@@ -39,7 +39,7 @@
     background-color: var(--tertiary);
     padding: 3rem 1rem;
     border-top: 5px solid var(--secondary);
-    box-shadow: 0 0 10px rgb(0 0 0 / 21%);
+    filter: drop-shadow(0 0 10px rgb(0 0 0 / 21%));
   }
 
   ul {

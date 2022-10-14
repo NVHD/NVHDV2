@@ -49,5 +49,7 @@
   }
   img.loaded {
     opacity: 1;
+    width: 100%;
+    height: auto;
   }
 </style>
