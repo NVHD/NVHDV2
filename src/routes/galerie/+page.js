@@ -1,7 +1,9 @@
 import {client} from '$lib/sanityClient'
 
 export async function load() {
-  const data = await client.fetch(`*[_type == "galerie"]{title, cover, slug}`)
+  const data = await client.fetch(
+    `*[_type == "galerie"] | order(date desc) {title, date, cover, slug}`
+  )
 
   if (data) {
     return {
