@@ -25,7 +25,7 @@
   }, {})
 </script>
 
-<Section style={'white'}>
+<Section style={'white'} gap={1}>
   <h2>
     <Heading style={'h3'} firstLine={'der'} secondLine={'Vorstand'} />
   </h2>
@@ -59,10 +59,6 @@
 </Section>
 
 <style>
-  div {
-    margin-bottom: 1rem;
-  }
-
   h3 {
     color: var(--primary);
     margin: 0;

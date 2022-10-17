@@ -5,7 +5,7 @@
   import {getGender} from '$lib/getGender'
 
   export let data
-  let {personen} = data.body
+  let {personen, documents} = data.body.data
 
   // Add each person to its role
   // ( There is only one role per Person so I can hardcode the 0 )
@@ -17,7 +17,7 @@
   }, {})
 </script>
 
-<Section style={'white'}>
+<Section style={'white'} gap={2}>
   <h2>
     <Heading style={'h3'} firstLine={'dein'} secondLine={'Kontakt'} />
   </h2>
@@ -46,14 +46,33 @@
     <p>{personenRollen.kassierer.name}</p>
     <BtnEmail email={personenRollen.kassierer.email} />
   </div>
+
+  <div>
+    <h3>Anmeldungen</h3>
+    <p>
+      Ganz einfach das Anmeldeformular ausfüllen, den Datenschutzzettel unterschreiben und uns per
+      Mail oder persönlich zukommen lassen. Alles Weitere klären wir dann. <span
+        role="img"
+        aria-label="Celebration"
+        >🎉
+      </span>
+    </p>
+  </div>
+
+  <div class="documents">
+    {#each documents as documet}
+      <a target="_blank" rel="noopener noreferrer" href={documet.file}>{documet.title}</a>
+    {/each}
+  </div>
 </Section>
 
 <style>
-  div {
-    margin-bottom: 1rem;
-  }
-
   h3 {
     margin: 0;
+  }
+
+  .documents {
+    display: flex;
+    flex-direction: column;
   }
 </style>

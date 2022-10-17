@@ -9,6 +9,7 @@ import blockContent from './documents/blockContent'
 import chronik from './documents/chronik'
 import datenschutz from './documents/datenschutz'
 import einstellungen from './documents/einstellungen'
+import dokumente from './documents/dokumente'
 import figure from './documents/figure'
 import figuren from './documents/figuren'
 import galerie from './documents/galerie'
@@ -40,6 +41,7 @@ export default createSchema({
     datenschutz,
     impressum,
     einstellungen,
+    dokumente,
     blockContent,
     figure,
     slideshow,

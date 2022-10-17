@@ -59,6 +59,10 @@
     background: transparent;
   }
 
+  button:hover .icon {
+    transform: rotate(180deg) translate3d(5px, 0, 0);
+  }
+
   a {
     display: grid;
     grid-template-columns: min-content 1fr;
@@ -106,6 +110,7 @@
   .back .icon {
     transform: rotate(180deg);
     z-index: 2;
+    transition: transform 0.2s ease-out;
   }
 
   .back .img {

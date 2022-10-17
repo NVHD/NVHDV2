@@ -116,15 +116,15 @@
   }
 
   :global(a) {
-    color: var(--white-80);
+    color: var(--primary-dark);
     text-decoration: none;
   }
   :global(a:hover) {
-    color: var(--white-80);
+    color: var(--primary-dark-transparent);
   }
 
   :global(a:visited) {
-    color: var(--white-80);
+    color: var(--primary-dark-transparent);
   }
 
   :global(h1, h2, h3, h4, h5, h6) {
