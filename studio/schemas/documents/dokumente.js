@@ -4,19 +4,26 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'fileTitle',
+      name: 'title',
       title: 'Dokument Titel',
       type: 'string'
     },
     {
       name: 'file',
       title: 'Dokument',
-      type: 'file'
+      type: 'file',
+      fields: [
+        {
+          name: 'title',
+          type: 'string',
+          title: 'Dokument Titel'
+        }
+      ]
     }
   ],
   preview: {
     select: {
-      title: 'fileTitle'
+      title: 'title'
     }
   }
 }

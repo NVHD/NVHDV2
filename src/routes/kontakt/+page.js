@@ -1,7 +1,9 @@
 import {client} from '$lib/sanityClient'
 
 export async function load() {
-  const data = await client.fetch(
+  const data = {}
+
+  data.personen = await client.fetch(
     `*[
       _type == "person" 
       && rolle == "präsident" 
@@ -10,11 +12,17 @@ export async function load() {
       {anrede, name, rolle, adresse, email, telefon}`
   )
 
-  if (data) {
+  data.documents = await client.fetch(`
+  *[_type == "dokument"]{
+    title,
+    'file': file.asset->url
+  }`)
+
+  if (data.personen && data.documents) {
     return {
       status: 200,
       body: {
-        personen: data
+        data
       }
     }
   }
